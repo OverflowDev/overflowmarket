@@ -97,7 +97,7 @@ function Navbar() {
                     </li>
                     <li>
                         <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase'>
-                            Connect Wallet
+                            Connect Wallet to have access
                         </button>
                     </li>
                     
