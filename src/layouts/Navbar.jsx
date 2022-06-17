@@ -75,24 +75,30 @@ function Navbar() {
 
                 {/* Mobile Menu  */}
                 <ul className={`
-                    md:hidden bg-white text-4xl absolute w-full h-full bottom-0 py-24 pl-4
+                    md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4
                     duration-500 ${open ? 'translate-x-0' : 'translate-x-full'}
                 `}>
+                   
                      <li>
-                        <Link to='/' className='py-7 px-3 inline-block'>
+                        <Link to='/' className='py-7 px-3 text-4xl inline-block'>
                             Shop
                         </Link>
                     </li>
                     <li>
-                        <Link to='/' className='py-7 px-3 inline-block'>
+                        <Link to='/' className='py-7 px-3 text-4xl inline-block'>
                             Partners
                         </Link>
                     </li>
                     <li className=''>
-                        <Link to='/' className="py-7 px-3 inline-block">
+                        <Link to='/' className="py-7 px-3 text-4xl inline-block">
                             {/* <ion-icon name="person-outline" size="large"></ion-icon> */}
                         Profile
                         </Link>
+                    </li>
+                    <li>
+                        <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase'>
+                            Connect Wallet
+                        </button>
                     </li>
                     
                 </ul>
