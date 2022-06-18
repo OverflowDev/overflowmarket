@@ -1,15 +1,22 @@
 import { Link } from 'react-router-dom'
+import { useContext, } from 'react'
 import CartImage from '../assets/pexels-karolina-grabowska-5632402.jpg'
 import Navbar from '../layouts/Navbar'
 
+import ProductsContext from '../context/products/ProductsContext'
+import PopularProducts from '../components/PopularProducts'
+
 function Home() {
+
+  const {populars} = useContext(ProductsContext)
+  // console.log(populars)
 
   return (
     <div className=''>
         
-        <section className="h-screen  bg-cover relative" style={{backgroundImage: `url('${CartImage}')`}}>
+        <section className="h-screen bg-cover relative" style={{backgroundImage: `url('${CartImage}')`}}>
           <Navbar />
-          <div className="md:hidden flex justify-center container mx-auto px-8">
+          <div className="md:hidden flex justify-center container mx-auto px-12">
             <div className="max-w-2xl text-center">
               <form className="mt-12 ">
                   <input className="rounded-l-lg py-2 border-t-2 border-b-2 border-l-2 text-gray-800 border-lime-200 bg-white" />
@@ -109,11 +116,29 @@ function Home() {
                     </Link>
                 </div>
               </div>
-
               {/* Card Ends  */}
                 
             </div>
         </div>
+      </section>
+    {/* Category ends */}
+
+    <section className=' mt-4'>
+      <div className="flex justify-center">
+        <h3 className='text-3xl md:text-4xl font-semibold tracking-widest uppercase'>Popular Products</h3>
+      </div>
+      
+      <div className='md:mt-6 py-4 flex justify-center'>
+        <div className="md:grid md:grid-cols-4 md:gap-6">
+          {
+          populars.map((popular) => {
+            return (
+              <PopularProducts key={popular.id} popular={popular} />
+            )
+          })
+          }
+        </div>
+      </div>
     </section>
 
     </div>
