@@ -65,11 +65,11 @@ function Navbar() {
                             </div>
                         </div> 
                     </li>
-                    {/* <li className=''>
-                       <div className="">
-                            <ion-icon name="person-outline" size="large"></ion-icon>
-                        </div> 
-                    </li> */}
+                        <li className=''>
+                        <div className="">
+                                <ion-icon name="person-outline" size="large"></ion-icon>
+                            </div> 
+                        </li>
                 </ul>
 
 

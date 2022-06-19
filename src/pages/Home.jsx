@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useContext, } from 'react'
 import CartImage from '../assets/pexels-karolina-grabowska-5632402.jpg'
 import Navbar from '../layouts/Navbar'
 
 import ProductsContext from '../context/products/ProductsContext'
 import PopularProducts from '../components/PopularProducts'
+import Category from '../components/Category'
 
 function Home() {
 
   const {populars} = useContext(ProductsContext)
-  // console.log(populars)
 
   return (
     <div className=''>
@@ -18,7 +18,7 @@ function Home() {
           <Navbar />
           <div className="md:hidden flex justify-center container mx-auto px-12">
             <div className="max-w-2xl text-center">
-              <form className="mt-12 ">
+              <form className="mt-12 flex">
                   <input className="rounded-l-lg py-2 border-t-2 border-b-2 border-l-2 text-gray-800 border-lime-200 bg-white" />
                   <button className="px-8 rounded-r-lg bg-lime-400  text-gray-800 font-bold py-2 uppercase border-lime-500 border-t border-b border-r">Search</button>
               </form>
@@ -35,95 +35,56 @@ function Home() {
           </div>
       </section>
       {/* Partners  */}
-      <section className=''>
-        <div className="animate-pulse bg-teal-500 flex items-center justify-between md:justify-around py-10 px-6 md:px-12">
-          <div className='text-6xl '>
-            <ion-icon name="logo-github"></ion-icon>
+      <section className='py-6'>
+        <div className=" flex items-center justify-center space-x-12">
+
+          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+            <div className="flex items-center">
+              <div className='text-4xl mr-8'>
+                <ion-icon name="car-sport-outline"></ion-icon>
+              </div>
+              <div className='flex flex-col items-center'>
+                <h3 className='text-2xl font-semibold'>Fast Shipping</h3>
+                <p>Order over $200</p>
+              </div>
+            </div>
           </div>
-          <div className='text-6xl'>
-            <ion-icon name="logo-gitlab"></ion-icon>
+          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+            <div className="flex items-center">
+              <div className='text-4xl mr-8'>
+                <ion-icon name="wallet-outline"></ion-icon>
+              </div>
+              <div className='flex flex-col items-center'>
+                <h3 className='text-2xl font-semibold'>Money Returns</h3>
+                <p>30 Days money return</p>
+              </div>
+            </div>
           </div>
-          <div className='text-6xl'>
-            <ion-icon name="logo-electron"></ion-icon>
+          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+            <div className="flex items-center">
+              <div className='text-4xl mr-8'>
+                <ion-icon name="alarm-outline"></ion-icon>
+              </div>
+              <div className='flex flex-col items-center'>
+                <h3 className='text-2xl font-semibold'>24/7 Support</h3>
+                <p>Customer Support</p>
+              </div>
+            </div>
           </div>
-          <div className='text-6xl'>
-            <ion-icon name="logo-discord"></ion-icon>
-          </div>
+
         </div>
       </section>
 
       {/* Category  */}
       <section className='bg-gray-100 h-full flex flex-col m-auto p-auto'>
         <h3 className='ml-12 font-semibold text-5xl mt-8 text-center uppercase'>Categories</h3>
+        <Category />
 
-        <div className="flex overflow-x-scroll pb-10 scrollbar-hide">
-            <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10">
-
-              <div className="inline-block mr-4">
-                <div className=" flex flex-col max-w-md w-56 h-56 md:w-64 md:h-64 py-4 px-6 my-16">
-                  <div className='uppercase text-4xl mb-3 relative'>
-                    <div className='animate-bounce absolute -left-10 top-2 text-3xl'>
-                      <ion-icon name="caret-forward"></ion-icon>
-                    </div>
-                    Categories
-                  </div>
-                  <p className='text-sm'>Calm down, do you need any latest blockchain assets? let's mix n match the categories which suits you</p>
-
-                </div>
-              </div>
-              {/* Cards  */}
-              <div className="inline-block mr-4">
-                <div className="group overflow-hidden relative max-w-md w-56 h-56 md:w-64 md:h-64 py-4 px-6 my-16 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out object-contain">
-                    <img src="https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Features" className='absolute inset-0 w-full h-full object-cover ease-in-out duration-500 group-hover:rotate-6 group-hover:scale-125' />
-                    <div className="absolute inset-0 w-full h-full bg-teal-600 opacity-50 transition-opacity duration-500 group-hover:opacity-75" ></div>
-                    <Link to='/' className="absolute px-16 inset-x-0 bottom-[40%]">
-                        <div className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-4 uppercase text-center font-bold text-gray-900">
-                            Robotic
-                        </div>
-                    </Link>
-                </div>
-              </div>
-              <div className="inline-block mr-4">
-                <div className="group overflow-hidden relative max-w-md w-56 h-56 md:w-64 md:h-64 py-4 px-6 my-16 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out object-contain">
-                    <img src="https://images.pexels.com/photos/785418/pexels-photo-785418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Features" className='absolute inset-0 w-full h-full object-cover ease-in-out duration-500 group-hover:rotate-6 group-hover:scale-125' />
-                    <div className="absolute inset-0 w-full h-full bg-teal-600 opacity-50 transition-opacity duration-500 group-hover:opacity-75" ></div>
-                    <Link to='/' className="absolute px-16 inset-x-0 bottom-[40%]">
-                        <div className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-4 uppercase text-center font-bold text-gray-900">
-                            Hardware
-                        </div>
-                    </Link>
-                </div>
-              </div>
-              <div className="inline-block mr-4">
-                <div className="group overflow-hidden relative max-w-md w-56 h-56 md:w-64 md:h-64 py-4 px-6 my-16 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out object-contain">
-                    <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Features" className='absolute inset-0 w-full h-full object-cover ease-in-out duration-500 group-hover:rotate-6 group-hover:scale-125' />
-                    <div className="absolute inset-0 w-full h-full bg-teal-600 opacity-50 transition-opacity duration-500 group-hover:opacity-75" ></div>
-                    <Link to='/' className="absolute px-16 inset-x-0 bottom-[40%]">
-                        <div className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-4 uppercase text-center font-bold text-gray-900">
-                            Laptop
-                        </div>
-                    </Link>
-                </div>
-              </div>
-              <div className="inline-block mr-4">
-                <div className="group overflow-hidden relative max-w-md w-56 h-56 md:w-64 md:h-64 py-4 px-6 my-16 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out object-contain">
-                    <img src="https://images.unsplash.com/photo-1619709821682-ec24ace60f09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Features" className='absolute inset-0 w-full h-full object-cover ease-in-out duration-500 group-hover:rotate-6 group-hover:scale-125' />
-                    <div className="absolute inset-0 w-full h-full bg-teal-600 opacity-50 transition-opacity duration-500 group-hover:opacity-75" ></div>
-                    <Link to='/' className="absolute px-8 inset-x-0 bottom-[40%]">
-                        <div className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-4 uppercase text-center font-bold text-gray-900">
-                            Hardware Wallet
-                        </div>
-                    </Link>
-                </div>
-              </div>
-              {/* Card Ends  */}
-                
-            </div>
-        </div>
       </section>
     {/* Category ends */}
 
-    <section className=' mt-4'>
+    {/* Popular products  */}
+    <section className='mt-4'>
       <div className="flex justify-center">
         <h3 className='text-3xl md:text-4xl font-semibold tracking-widest uppercase'>Popular Products</h3>
       </div>
@@ -141,7 +102,29 @@ function Home() {
       </div>
     </section>
 
-    </div>
+    <section className='py-12 flex items-center justify-center'>
+      <div className='bg-gray-200 shadow-lg w-10/12 md:w-3/4 h-56 rounded-lg relative'>
+
+        <div className="flex flex-col items-center p-3 mt-5">
+          <h3 className='text-3xl capitalize font-semibold tracking-wider'>Join our newsletter</h3>
+          <p className='font-light tracking-widest text-center'>Be the first who will know our latest products, popular stock, and big discount</p>
+          <div className='flex rounded bg-white w-auto mt-5'>
+            <input type="search" className='w-full border-none bg-transparent px-4 py-1 text-gray-900 outline-none focus:outline-none' />
+
+            <button
+              type="button"
+              className="m-1 rounded px-8 py-2 font-semibold text-gray-100 bg-teal-500">
+              Join
+            </button>
+
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+  </div>
   )
 }
 
