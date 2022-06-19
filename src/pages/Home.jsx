@@ -36,9 +36,9 @@ function Home() {
       </section>
       {/* Partners  */}
       <section className='py-6'>
-        <div className=" flex items-center justify-center space-x-12">
+        <div className="md:flex items-center justify-center md:space-x-12">
 
-          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+          <div className="mb-2 bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="car-sport-outline"></ion-icon>
@@ -49,7 +49,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+          <div className="mb-2 bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="wallet-outline"></ion-icon>
@@ -60,7 +60,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-teal-200 bg-opacity-25 border-2 border-teal-900 px-12 py-4">
+          <div className="bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="alarm-outline"></ion-icon>
