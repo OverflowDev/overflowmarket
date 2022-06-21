@@ -1,7 +1,8 @@
 // import { Link } from 'react-router-dom'
 import { useContext, } from 'react'
+import Typical from 'react-typical'
+
 import CartImage from '../assets/pexels-karolina-grabowska-5632402.jpg'
-import Navbar from '../layouts/Navbar'
 
 import ProductsContext from '../context/products/ProductsContext'
 import PopularProducts from '../components/PopularProducts'
@@ -14,8 +15,7 @@ function Home() {
   return (
     <div className=''>
         
-        <section className="h-screen bg-cover relative" style={{backgroundImage: `url('${CartImage}')`}}>
-          <Navbar />
+        <section className="h-screen bg-cover" style={{backgroundImage: `url('${CartImage}')`}}>
           <div className="md:hidden flex justify-center container mx-auto px-12">
             <div className="max-w-2xl text-center">
               <form className="mt-12 flex">
@@ -27,9 +27,22 @@ function Home() {
           </div>
           <div className="flex h-full w-full md:items-center md:mt-0 mt-56 justify-center container mx-auto px-8">
             <div className="max-w-2xl text-center">
-              <h1 className="text-3xl sm:text-5xl capitalize tracking-widest font-bold text-black lg:text-6xl">Overflow Market</h1>
+              <h1 className="sm:text-5xl capitalize tracking-widest font-bold text-black lg:text-6xl">Overflow Market</h1>
 
-              <p className="mt-6 lg:text-lg text-black font-semibold">Coming Soon</p>
+              <p className="mt-6 lg:text-lg text-black font-semibold">
+                Coming {' '}
+                <Typical 
+                  loop={Infinity}
+                  wrapper='b'
+                  steps={[
+                    'Soon', 
+                    1000,
+                    'Here',
+                    1000
+                  ]}
+                />
+                
+              </p>
 
             </div>
           </div>
@@ -38,7 +51,7 @@ function Home() {
       <section className='py-6'>
         <div className="md:flex items-center justify-center md:space-x-12">
 
-          <div className="mb-2 bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0 mb-2 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="car-sport-outline"></ion-icon>
@@ -49,7 +62,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="mb-2 bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0 mb-2 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="wallet-outline"></ion-icon>
@@ -60,7 +73,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-teal-200 bg-opacity-10 border border-teal-700 px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto  px-4 md:px-12 py-4">
             <div className="flex items-center">
               <div className='text-4xl mr-8'>
                 <ion-icon name="alarm-outline"></ion-icon>

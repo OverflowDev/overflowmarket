@@ -8,7 +8,7 @@ function Navbar() {
     const [open, setOpen] = useState(false)
 
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
         <nav className="bg-white shadow">
             <div className="flex items-center font-medium justify-around">
                 

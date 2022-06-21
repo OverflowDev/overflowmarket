@@ -7,6 +7,7 @@ export const ProductsProvider = ({children}) => {
 
     const [products, setProducts] = useState([])
     const [populars, setPopulars] = useState([])
+    const [categories, setCategories] = useState([])
 
     // fetch products
     useEffect(() => {
@@ -14,7 +15,7 @@ export const ProductsProvider = ({children}) => {
     }, [])
 
     const fetchProducts = () => {
-      setProducts(data)
+      setProducts(data.products)
     }
 
     // Fetch popular 
@@ -23,10 +24,19 @@ export const ProductsProvider = ({children}) => {
     },[])
 
     const fetchPopular = () => {
-      const prodPopular = data.filter((popular) => {
+      const prodPopular = data.products.filter((popular) => {
         return popular.popular === true
       })
       setPopulars(prodPopular)
+    }
+
+    // Fetch caategory
+    useEffect(() => {
+      fetchCategory()
+    },[])
+
+    const fetchCategory = () => {
+      setCategories(data.categories)
     }
 
 
@@ -52,7 +62,8 @@ export const ProductsProvider = ({children}) => {
     
     return <ProductsContext.Provider value={{  
         products,
-        populars
+        populars,
+        categories
       }}
     >
         {children}
