@@ -17,7 +17,9 @@ function Navbar() {
                     <div className='text-3xl md:hidden bg-teal-400 rounded-md w-8 h-8 text-white' onClick={() => setOpen(!open)}>
                         <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
                     </div>
-                    <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
+                    <Link to='/'>
+                        <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
+                    </Link>
                     {/* Cart  */}
                     <div className="relative md:hidden">
                         <img src={Cart} alt="Cart" className='h-10 w-10 ' />
@@ -30,12 +32,12 @@ function Navbar() {
 
                 <ul className='md:flex hidden uppercase items-center gap-8'>
                     <li>
-                        <Link to='/' className='py-7 px-3 inline-block'>
+                        <Link to='/shop' className='py-7 px-3 inline-block'>
                             Shop
                         </Link>
                     </li>
                     <li>
-                        <Link to='/' className='py-7 px-3 inline-block'>
+                        <Link to='/partners' className='py-7 px-3 inline-block'>
                             Partners
                         </Link>
                     </li>
@@ -61,7 +63,9 @@ function Navbar() {
                        <div className="flex relative">
                             <img src={Cart} alt="Cart" className='h-8 w-8' />
                             <div className=' absolute -top-1 -right-2 bg-lime-900 h-5 w-5 rounded-full text-sm text-center text-white'>
-                                4
+                                <div className='flex justify-center items-center'>
+                                    4
+                                </div>
                             </div>
                         </div> 
                     </li>

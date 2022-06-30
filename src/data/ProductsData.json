@@ -146,20 +146,20 @@
 
     "categories": [
         {
-          "title": "Wallets",
+          "title": "wallet",
           "imageUrl": "https://images.unsplash.com/photo-1634024520691-251d965aef54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
         },
         {
-          "title": "Hardware",
+          "title": "hardware",
           "imageUrl": "https://images.pexels.com/photos/8566428/pexels-photo-8566428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
-          "title": "Laptops",
+          "title": "laptop",
           "imageUrl":"https://images.unsplash.com/photo-1641623410264-948701015656?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 
         },
         {
-          "title": "Robotics",
+          "title": "robotic",
           "imageUrl": "https://images.pexels.com/photos/8438954/pexels-photo-8438954.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
         

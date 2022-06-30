@@ -1,22 +1,34 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState, useReducer, useContext } from "react"
+import { useParams } from "react-router-dom"
 import data from '../../data/ProductsData.json'
+import productsReducer from "./ProductsReducer"
 
 const ProductsContext = createContext()
 
 export const ProductsProvider = ({children}) => {
 
-    const [products, setProducts] = useState([])
-    const [populars, setPopulars] = useState([])
-    const [categories, setCategories] = useState([])
+  const [populars, setPopulars] = useState([])
+  // const [category, setCategory] = useState([])
+  // const [products, setProducts] = useState([])
+  // const [categories, setCategories] = useState([])
+
+  const initialState = {
+    loading: false,
+    products: data.products,
+    categories: data.categories
+  }
+
+  const [state, dispatch] = useReducer(productsReducer, initialState)
+
 
     // fetch products
-    useEffect(() => {
-      fetchProducts()
-    }, [])
+    // useEffect(() => {
+    //   fetchProducts()
+    // }, [])
 
-    const fetchProducts = () => {
-      setProducts(data.products)
-    }
+    // const fetchProducts = () => {
+    //   setProducts(data.products)
+    // }
 
     // Fetch popular 
     useEffect(() => {
@@ -31,44 +43,46 @@ export const ProductsProvider = ({children}) => {
     }
 
     // Fetch caategory
-    useEffect(() => {
-      fetchCategory()
-    },[])
-
-    const fetchCategory = () => {
-      setCategories(data.categories)
-    }
-
-
-
-
     // useEffect(() => {
-    //   fetchProducts()
-    // }, [])
-    
-    // const fetchProducts = async () => {
-    //     const response = await fetch('https://fakestoreapi.com/products', {
-    //         headers: {
-    //             'Content-type': 'application/json',
-    //           },
-    //     })
-    //     const data = await response.json()
+    //   fetchCategories()
+    // },[])
 
-    //     setProducts(data)
-
+    // const fetchCategories = () => {
+    //   setCategories(data.categories)
     // }
 
+  //   useEffect(() => {
+  //     // fetchCategory()
+  //     const cate = data.products.filter(category => 
+  //       category.category == 'hardware'
+  //     )
+  //     if(category){
+  //       setCategory(cate)
+  //   }
+  //   }, [])
+
+  //   const fetchCategory = () => {
+  //     const cate = data.products.filter(category => 
+  //       category.category == params.category
+  //     )
+  //     if(category){
+  //       setCategory(cate)
+  //   }
+  // }
 
     
     return <ProductsContext.Provider value={{  
-        products,
+        // products
         populars,
-        categories
+        // category,
+        // categories,
+        ...state
       }}
     >
         {children}
 
     </ProductsContext.Provider>
 }
+
 
 export default ProductsContext

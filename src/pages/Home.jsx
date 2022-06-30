@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom'
 import { useContext, } from 'react'
-import Typical from 'react-typical'
+// import Typical from 'react-typical'
 
 import CartImage from '../assets/pexels-karolina-grabowska-5632402.jpg'
 
@@ -30,18 +30,7 @@ function Home() {
               <h1 className="sm:text-5xl capitalize tracking-widest font-bold text-black lg:text-6xl">Overflow Market</h1>
 
               <p className="mt-6 lg:text-lg text-black font-semibold">
-                Coming {' '}
-                <Typical 
-                  loop={Infinity}
-                  wrapper='b'
-                  steps={[
-                    'Soon', 
-                    1000,
-                    'Here',
-                    1000
-                  ]}
-                />
-                
+                Coming {' '} Soon
               </p>
 
             </div>
