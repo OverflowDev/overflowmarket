@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState, useReducer, useContext } from "react"
-import { useParams } from "react-router-dom"
 import data from '../../data/ProductsData.json'
 import productsReducer from "./ProductsReducer"
 
@@ -8,6 +7,7 @@ const ProductsContext = createContext()
 export const ProductsProvider = ({children}) => {
 
   const [populars, setPopulars] = useState([])
+  const [filter, setFilter] = useState([])
   // const [category, setCategory] = useState([])
   // const [products, setProducts] = useState([])
   // const [categories, setCategories] = useState([])
@@ -40,6 +40,21 @@ export const ProductsProvider = ({children}) => {
         return popular.popular === true
       })
       setPopulars(prodPopular)
+    }
+
+    // Filter Products 
+    useEffect(() => {
+      filterProduct()
+    }, [])
+
+    const filterProduct = (type) => {
+      const filterProducts = data.products.filter((typ) => {
+        return typ.category === type
+      })
+
+      if(filterProducts){
+        setFilter(filterProducts)
+      }
     }
 
     // Fetch caategory
@@ -76,7 +91,9 @@ export const ProductsProvider = ({children}) => {
         populars,
         // category,
         // categories,
-        ...state
+        ...state,
+        filterProduct
+        
       }}
     >
         {children}
