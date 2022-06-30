@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {useEffect, useState, useContext} from 'react'
+import {useContext} from 'react'
 
 
 import ProductsContext from '../context/products/ProductsContext'
