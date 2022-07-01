@@ -1,5 +1,10 @@
+import { useContext } from "react"
 
-function FilterProducts({filterData}) {
+import ProductsContext from '../../context/products/ProductsContext'
+
+function FilterProducts() {
+    const {filterProduct, filterData} = useContext(ProductsContext)
+
   return (
     <div className="">
         {
@@ -7,7 +12,8 @@ function FilterProducts({filterData}) {
                 return (
                     <button
                         key={id}
-                        className='flex'
+                        className=''
+                        onClick={() => {filterProduct(val)}}
                     >
                         {val}
                     </button>

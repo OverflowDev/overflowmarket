@@ -20,7 +20,7 @@ function App() {
   return (
     <ProductsProvider>
 
-      <>
+      <div className='container'>
         <Router>
           <Navbar />
             <Routes>
@@ -38,7 +38,7 @@ function App() {
             </Routes>
             <Footer />
         </Router>
-      </>
+      </div>
 
     </ProductsProvider>
   );

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useReducer, useContext } from "react"
+import { createContext, useEffect, useReducer } from "react"
 import data from '../../data/ProductsData.json'
 import productsReducer from "./ProductsReducer"
 
@@ -6,91 +6,50 @@ const ProductsContext = createContext()
 
 export const ProductsProvider = ({children}) => {
 
-  const [populars, setPopulars] = useState([])
-  const [filter, setFilter] = useState([])
-  // const [category, setCategory] = useState([])
-  // const [products, setProducts] = useState([])
-  // const [categories, setCategories] = useState([])
-
   const initialState = {
     loading: false,
     products: data.products,
-    categories: data.categories
+    categories: data.categories,
+    populars: []
   }
 
   const [state, dispatch] = useReducer(productsReducer, initialState)
 
-
-    // fetch products
-    // useEffect(() => {
-    //   fetchProducts()
-    // }, [])
-
-    // const fetchProducts = () => {
-    //   setProducts(data.products)
-    // }
-
-    // Fetch popular 
     useEffect(() => {
-     fetchPopular()
-    },[])
-
-    const fetchPopular = () => {
-      const prodPopular = data.products.filter((popular) => {
-        return popular.popular === true
-      })
-      setPopulars(prodPopular)
-    }
-
-    // Filter Products 
-    useEffect(() => {
-      filterProduct()
+      dispatch({
+          type: 'FILTER_POPULAR_PRODUCTS',
+        })
     }, [])
 
-    const filterProduct = (type) => {
+    // Filter Products Category
+    const filterData = [ ...new Set(data.products.map((Val) => Val.category )), 'All']
+
+    // Filter Products 
+    const filterProduct = (curType) => {
+
+      if(curType === 'All'){
+        dispatch({
+          type: 'FILTER_ALL_PRODUCT',
+          payload: data.products
+        })
+        return
+      }
+      
       const filterProducts = data.products.filter((typ) => {
-        return typ.category === type
+        return typ.category === curType
       })
 
-      if(filterProducts){
-        setFilter(filterProducts)
+      if(filterProducts) {
+        dispatch({
+          type: 'FILTER_PRODUCT',
+          payload: filterProducts
+        })
       }
     }
 
-    // Fetch caategory
-    // useEffect(() => {
-    //   fetchCategories()
-    // },[])
 
-    // const fetchCategories = () => {
-    //   setCategories(data.categories)
-    // }
-
-  //   useEffect(() => {
-  //     // fetchCategory()
-  //     const cate = data.products.filter(category => 
-  //       category.category == 'hardware'
-  //     )
-  //     if(category){
-  //       setCategory(cate)
-  //   }
-  //   }, [])
-
-  //   const fetchCategory = () => {
-  //     const cate = data.products.filter(category => 
-  //       category.category == params.category
-  //     )
-  //     if(category){
-  //       setCategory(cate)
-  //   }
-  // }
-
-    
     return <ProductsContext.Provider value={{  
-        // products
-        populars,
-        // category,
-        // categories,
+        filterData,
         ...state,
         filterProduct
         
