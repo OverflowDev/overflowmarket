@@ -12,7 +12,7 @@ function FilterProducts() {
                 return (
                     <button
                         key={id}
-                        className='px-6 py-3 bg-teal-500 m-2 rounded-lg uppercase text-white'
+                        className={`px-6 py-3 m-2 rounded-lg uppercase text-white ${val ? `bg-teal-700` : 'bg-teal-200'}`}
                         onClick={() => {filterProduct(val)}}
                     >
                         {val}
