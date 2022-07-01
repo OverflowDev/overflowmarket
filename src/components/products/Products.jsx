@@ -9,12 +9,14 @@ export default function Products() {
     <div className="">
    
       <div 
-        className='p-6'
+        className='p-10'
       > 
-        <div className="">
+        <div className="flex-col justify-center">
+          <h3 className="text-center font-normal text-2xl tracking-wider">Filter Category</h3>
           <FilterProducts />
         </div>
-        <div className="">
+        <div className="mt-4">
+          <h3 className="text-left font-bold text-2xl tracking-wider">Products</h3>
           <ProductsItem />
         </div>
       </div>
