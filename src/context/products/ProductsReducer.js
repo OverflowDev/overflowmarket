@@ -6,12 +6,14 @@ const productsReducer = (state, action) => {
             products: action.payload
         }
     }
+
     if(action.type === 'FILTER_PRODUCT'){
         return {
             ...state, 
             products: action.payload
         }
     }
+    
     if(action.type === 'FILTER_POPULAR_PRODUCTS'){
         return {
             ...state, 

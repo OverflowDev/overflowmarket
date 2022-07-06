@@ -1,15 +1,7 @@
 
 function PopularProducts({popular}) {
+
     return (
-      // <div className="inline-block">
-      //     <div className="rounded-lg max-w-md bg-red-400 w-72 h-72 relative">
-      //         <img src={popular.image} alt="Category" className="absolute inset-0 w-full h-full object-cover" />
-      //         {/* <div className="absolute inset-0 w-full h-full bg-teal-600 opacity-50 transition-opacity duration-500 group-hover:opacity-75" ></div> */}
-      //     </div>
-      //     <h3 className="">
-      //         {popular.title}
-      //     </h3>
-      // </div>
       <div>
             <div className="inline-block px-4 py-2">
                 <div className="group overflow-hidden relative max-w-md w-80 h-80 md:w-64 md:h-64 rounded-lg shadow-md bg-white hover:shadow-xl">
@@ -19,7 +11,9 @@ function PopularProducts({popular}) {
                         <ion-icon name="flame-sharp"></ion-icon>
                     </div>
                     <div className="absolute px-16 inset-x-0 bottom-5">
-                        <div className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-3 uppercase text-center font-bold text-gray-900">
+                        <div 
+                            // onClick={() => add(popular)}
+                            className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-3 uppercase text-center font-bold text-gray-900">
                             Add to Cart
                         </div>
                     </div>

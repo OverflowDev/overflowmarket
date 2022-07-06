@@ -1,11 +1,15 @@
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+
 import Logo from '../assets/icons8-shopping-cart-with-money-100.png'
 import Cart from '../assets/cart-outline.svg'
+
+import CartContext from '../context/carts/CartContext'
 
 function Navbar() {
 
     const [open, setOpen] = useState(false)
+    const {amount} = useContext(CartContext)
 
   return (
     <div className='overflow-hidden'>
@@ -21,12 +25,12 @@ function Navbar() {
                         <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
                     </Link>
                     {/* Cart  */}
-                    <div className="relative md:hidden">
+                    <Link to='/cart' className="relative md:hidden">
                         <img src={Cart} alt="Cart" className='h-10 w-10 ' />
-                        <div className='absolute -top-1 -right-2 bg-lime-900 h-6 w-6 rounded-full text-sm text-center text-white'>
-                            4
+                        <div className=' absolute -top-1 -right-2 bg-lime-900 h-5 w-5 rounded-full flex items-center justify-center text-sm text-center text-white'>
+                            {amount}
                         </div>
-                    </div> 
+                    </Link> 
                 </div>
 
 
@@ -60,41 +64,40 @@ function Navbar() {
                     </li>
                     {/* Cart  */}
                     <li>
-                       <div className="flex relative">
+                       <Link to='/cart' className="flex relative">
                             <img src={Cart} alt="Cart" className='h-8 w-8' />
-                            <div className=' absolute -top-1 -right-2 bg-lime-900 h-5 w-5 rounded-full text-sm text-center text-white'>
-                                <div className='flex justify-center items-center'>
-                                    4
-                                </div>
+                            <div className=' absolute -top-1 -right-2 bg-lime-900 h-5 w-5 rounded-full flex items-center justify-center text-sm text-center text-white'>
+                                {amount}
                             </div>
-                        </div> 
+                        </Link> 
                     </li>
-                        <li className=''>
-                        <div className="">
-                                <ion-icon name="person-outline" size="large"></ion-icon>
-                            </div> 
-                        </li>
+                    <li className=''>
+                        <Link to='/profile' className="py-7 px-3 text-4xl inline-block">
+                            <ion-icon name="person-outline" size="large"></ion-icon>
+                        </Link>
+                    </li>
+
                 </ul>
 
 
                 {/* Mobile Menu  */}
                 <ul className={`
-                    md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4
+                    md:hidden bg-white absolute w-full h-screen bottom-0 py-24 pl-4
                     duration-500 z-10 ${open ? 'left-0' : 'left-[-100%]'}
                 `}>
                    
                      <li>
-                        <Link to='/' className='py-7 px-3 text-4xl inline-block'>
+                        <Link to='/shop' className='py-7 px-3 text-4xl inline-block'>
                             Shop
                         </Link>
                     </li>
                     <li>
-                        <Link to='/' className='py-7 px-3 text-4xl inline-block'>
+                        <Link to='/partners' className='py-7 px-3 text-4xl inline-block'>
                             Partners
                         </Link>
                     </li>
                     <li className=''>
-                        <Link to='/' className="py-7 px-3 text-4xl inline-block">
+                        <Link to='/profile' className="py-7 px-3 text-4xl inline-block">
                             {/* <ion-icon name="person-outline" size="large"></ion-icon> */}
                         Profile
                         </Link>

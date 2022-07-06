@@ -1,19 +1,24 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 
 import ProductsContext from '../../context/products/ProductsContext'
 
 function FilterProducts() {
     const {filterProduct, filterData} = useContext(ProductsContext)
+    const [active, setActive] = useState(false)
+
 
   return (
     <div className="flex flex-wrap justify-center">
+        
         {
-            filterData.map((val, id) => {
+            filterData.map((val, index) => {
                 return (
                     <button
-                        key={id}
-                        className={`px-6 py-3 m-2 rounded-lg uppercase text-white ${val ? `bg-teal-700` : 'bg-teal-200'}`}
-                        onClick={() => {filterProduct(val)}}
+                        key={index}
+                        className={`px-6 py-3 m-2 rounded-lg uppercase text-white bg-teal-800`}
+                        onClick={() => {
+                            filterProduct(val)
+                        }}
                     >
                         {val}
                     </button>
