@@ -1,5 +1,9 @@
+// import { useContext } from "react"
+// import CartContext from "../context/carts/CartContext"
 
 function PopularProducts({popular}) {
+
+    // const {add} = useContext(CartContext)
 
     return (
       <div>
@@ -11,11 +15,10 @@ function PopularProducts({popular}) {
                         <ion-icon name="flame-sharp"></ion-icon>
                     </div>
                     <div className="absolute px-16 inset-x-0 bottom-5">
-                        <div 
-                            // onClick={() => add(popular)}
+                        <button 
                             className="bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-3 uppercase text-center font-bold text-gray-900">
                             Add to Cart
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className="flex justify-between mt-2">

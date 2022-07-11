@@ -1,18 +1,20 @@
 import { createContext, useReducer, useEffect } from "react";
 import cartReducer from "./CartReducer";
-import data from '../../data/CartsData.json'
+// import data from '../../data/CartsData.json'
 
-const url = 'http://localhost:3000/cartsData.json'
+// const url = 'https://course-api.com/react-useReducer-cart-project'
 const CartContext = createContext()
 
+const initialState = {
+    loading: false,
+    cart: [],
+    total: 0,
+    amount: 0,
+    tax: 0,
+    shipping: 0,
+}
 export const CartProvider = ({children}) => {
 
-    const initialState = {
-        loading: false,
-        cart: data,
-        total: 0,
-        amount: 0
-    }
 
     const [state, dispatch] = useReducer(cartReducer, initialState)
  
@@ -53,17 +55,22 @@ export const CartProvider = ({children}) => {
     }
 
     // Fetch Data 
-    const fetchData = async () => {
-        dispatch({type: 'LOADING'})
+    // const fetchData = async () => {
+    //     dispatch({type: 'LOADING'})
 
-        const response = await fetch(url)
-        const cart = await response.json()
+    //     const response = await fetch(url)
+    //     const cart = await response.json()
 
-        dispatch({
-            type: 'DISPLAY_ITEMS',
-            payload: cart
-        })
-    } 
+    //     dispatch({
+    //         type: 'DISPLAY_ITEMS',
+    //         payload: cart
+    //     })
+    // } 
+
+    //  // Fetch Data useEffect 
+    //  useEffect(() => {
+    //     fetchData()
+    //   }, [])
 
     // Increase and Decrease as one function
     const toggleAmount = (id, type) => {
@@ -72,11 +79,6 @@ export const CartProvider = ({children}) => {
             payload: {id, type}
         })
     }
-
-    // Fetch Data useEffect 
-    useEffect(() => {
-      fetchData()
-    }, [])
 
     // Get Total Balance 
     useEffect(() => {

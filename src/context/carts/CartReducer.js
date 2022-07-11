@@ -2,13 +2,13 @@ const cartReducer = (state, action) => {
 
     if(action.type === 'ADD_TO_CART'){
 
-        const exist = state.cart.find(item => item.id === action.payload.product.id)
+        const exist = state.cart.find(item => item.id === action.payload.id)
         
         if(exist){
 
             return {
                 ...state,
-                cart: state.cart.map(item => item.id === action.payload.product.id ? {
+                cart: state.cart.map(item => item.id === action.payload.id ? {
                     ...exist,
                     amount: exist.amount + 1
                 } : item)
@@ -20,7 +20,7 @@ const cartReducer = (state, action) => {
                 cart: [
                     ...state.cart,
                     {
-                        ...action.payload.product, amount: 1
+                        ...action.payload, amount: 1
                     }
                 ]
             }
@@ -108,6 +108,7 @@ const cartReducer = (state, action) => {
         let {total, amount} = state.cart.reduce((cartTotal, cartItem) => 
         {
             const{price, amount} = cartItem
+
             const itemTotal = price * amount
 
             cartTotal.total += itemTotal

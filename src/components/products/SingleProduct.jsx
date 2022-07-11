@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react'
 import ProductsContext from '../../context/products/ProductsContext'
 import {useParams, useNavigate} from 'react-router-dom'
 
-
 function SingleProduct() {
 
     const {products} = useContext(ProductsContext)
@@ -46,7 +45,11 @@ function SingleProduct() {
                                         <span className="font-bold text-5xl leading-none align-baseline">{singleProduct.price}</span>
                                     </div>
                                     <div className="inline-block align-bottom">
-                                        <button className="bg-teal-800 opacity-75 hover:opacity-100 text-white hover:text-white rounded-full px-10 py-2 font-semibold uppercase"> <ion-icon name="cart"></ion-icon> ADD To Cart</button>
+                                        <button 
+                                            className="bg-teal-800 opacity-75 hover:opacity-100 text-white hover:text-white rounded-full px-10 py-2 font-semibold uppercase"
+                                        > 
+                                            <ion-icon name="cart"></ion-icon> Add To Cart
+                                        </button>
                                     </div>
                                 </div>
                             </div>
