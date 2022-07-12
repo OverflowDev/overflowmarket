@@ -14,13 +14,13 @@ function PopularProducts({popular}) {
                     <div className="group-hover:right-2 delay-100 absolute -right-14 top-5 w-8 h-8 p-0.5 duration-700 bg-teal-800 rounded-full text-red-600 text-center text-2xl">
                         <ion-icon name="flame-sharp"></ion-icon>
                     </div>
-                    <div className="absolute px-16 bottom-5">
+                    {/* <div className=""> */}
                         <button 
                             onClick={() => add(popular)}
-                            className="p-2 bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-3 uppercase text-center font-bold text-gray-900">
+                            className="absolute inset-x-[17%] bottom-[40%] w-4/6   bg-white group-hover:bg-teal-900 group-hover:text-white rounded py-3 uppercase text-center font-bold text-gray-900">
                             Add to Cart
                         </button>
-                    </div>
+                    {/* </div> */}
                 </div>
                 <div className="flex justify-between mt-2">
                     <h3 className="font-semibold tracking-wider">{popular.title}</h3>
