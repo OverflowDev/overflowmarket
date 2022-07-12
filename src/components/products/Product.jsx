@@ -55,7 +55,7 @@ function Product() {
             return (
               <div
               key={prod.id} >
-                <ProductItem {...prod} />
+                <ProductItem prod={prod} />
                   {/* <h3>{cat.category}</h3> */}
               </div>
             );

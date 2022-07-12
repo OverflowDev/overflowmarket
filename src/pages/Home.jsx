@@ -40,35 +40,35 @@ function Home() {
       <section className='py-6'>
         <div className="md:flex items-center justify-center md:space-x-12">
 
-          <div className="mx-auto md:mx-0 mb-2 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0 mb-2  bg-opacity-10 rounded border-r border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
             <div className="flex items-center">
-              <div className='text-4xl mr-8'>
-                <ion-icon name="car-sport-outline"></ion-icon>
+              <div className='text-4xl mr-8 text-teal-600'>
+                <ion-icon name="car-sport"></ion-icon>
               </div>
               <div className='flex flex-col items-center'>
-                <h3 className='text-2xl font-semibold'>Fast Shipping</h3>
+                <h3 className='text-2xl font-medium tracking-wide'>Fast Shipping</h3>
                 <p>Order over $200</p>
               </div>
             </div>
           </div>
-          <div className="mx-auto md:mx-0 mb-2 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0 mb-2  bg-opacity-10 rounded border-r border-teal-700 w-80 md:w-auto px-4 md:px-12 py-4">
             <div className="flex items-center">
-              <div className='text-4xl mr-8'>
-                <ion-icon name="wallet-outline"></ion-icon>
+              <div className='text-4xl mr-8 text-teal-600'>
+                <ion-icon name="wallet"></ion-icon>
               </div>
               <div className='flex flex-col items-center'>
-                <h3 className='text-2xl font-semibold'>Money Returns</h3>
+                <h3 className='text-2xl font-medium tracking-wide'>Money Returns</h3>
                 <p>30 Days money return</p>
               </div>
             </div>
           </div>
-          <div className="mx-auto md:mx-0 bg-teal-200 bg-opacity-10 rounded-full border border-teal-700 w-80 md:w-auto  px-4 md:px-12 py-4">
+          <div className="mx-auto md:mx-0  bg-opacity-10 rounded border-r border-teal-700 w-80 md:w-auto  px-4 md:px-12 py-4">
             <div className="flex items-center">
-              <div className='text-4xl mr-8'>
-                <ion-icon name="alarm-outline"></ion-icon>
+              <div className='text-4xl mr-8 text-teal-600'>
+                <ion-icon name="alarm"></ion-icon>
               </div>
               <div className='flex flex-col items-center'>
-                <h3 className='text-2xl font-semibold'>24/7 Support</h3>
+                <h3 className='text-2xl font-medium tracking-wide'>24/7 Support</h3>
                 <p>Customer Support</p>
               </div>
             </div>

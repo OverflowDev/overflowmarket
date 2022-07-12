@@ -38,15 +38,17 @@ function ProductsItem() {
                                 
                             </div>
                         </Link>
-                        <button 
-                            onClick={() => add(product)}
-                            className='px-5 py-2 bg-teal-300 text-black font-semibold rounded hover:bg-teal-400 md:left-1/4 md:-bottom-20 left-1/4 bottom-20'
-                        >
-                            ADD TO CART
-                        </button>
                         <div className="flex justify-between mt-2">
                             <h3 className="font-bold tracking-wider">{title}</h3>
                             <h4 className="font-light tracking-wider">${price}</h4>
+                        </div>
+                        <div className="flex justify-center mt-2">
+                            <button 
+                                onClick={() => add(product)}
+                                className='px-5 py-2 bg-teal-300 text-black font-semibold rounded hover:bg-teal-400 md:left-1/4 md:-bottom-20 left-1/4 bottom-20'
+                            >
+                                ADD TO CART
+                            </button>
                         </div>
                     </div>
                 )
