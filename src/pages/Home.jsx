@@ -30,7 +30,7 @@ function Home() {
               <h1 className="sm:text-5xl capitalize tracking-widest font-bold text-black lg:text-6xl">Overflow Market</h1>
 
               <p className="mt-6 lg:text-lg text-black font-semibold">
-                Coming {' '} Soon
+                A <span className='font-bold uppercase'>Web3</span> E-commerce Website Coming {' '} Soon
               </p>
 
             </div>

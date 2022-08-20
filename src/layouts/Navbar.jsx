@@ -9,6 +9,8 @@ import CartContext from '../context/carts/CartContext'
 function Navbar() {
 
     const [open, setOpen] = useState(false)
+    const closeMenu = () => setOpen(false)
+
     const {amount} = useContext(CartContext)
 
   return (
@@ -21,9 +23,15 @@ function Navbar() {
                     <div className='text-3xl md:hidden bg-teal-400 rounded-md w-8 h-8 text-white' onClick={() => setOpen(!open)}>
                         <ion-icon name={`${open ? 'close' : 'menu'}`}></ion-icon>
                     </div>
-                    <Link to='/'>
-                        <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
-                    </Link>
+                    {open ? 
+                        <Link to='/' onClick={closeMenu}>
+                            <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
+                        </Link>
+                        :
+                        <Link to='/'>
+                            <img src={Logo} alt="Logo" className='md:cursor-pointer h-12' />
+                        </Link>
+                    }
                     {/* Cart  */}
                     <Link to='/cart' className="relative md:hidden">
                         <img src={Cart} alt="Cart" className='h-10 w-10 ' />
@@ -87,23 +95,23 @@ function Navbar() {
                 `}>
                    
                      <li>
-                        <Link to='/shop' className='py-7 px-3 text-4xl inline-block'>
+                        <Link to='/shop' className='py-7 px-3 text-4xl inline-block' onClick={closeMenu}>
                             Shop
                         </Link>
                     </li>
                     <li>
-                        <Link to='/partners' className='py-7 px-3 text-4xl inline-block'>
+                        <Link to='/partners' className='py-7 px-3 text-4xl inline-block' onClick={closeMenu}>
                             Partners
                         </Link>
                     </li>
                     <li className=''>
-                        <Link to='/profile' className="py-7 px-3 text-4xl inline-block">
+                        <Link to='/profile' className="py-7 px-3 text-4xl inline-block" onClick={closeMenu}>
                             {/* <ion-icon name="person-outline" size="large"></ion-icon> */}
                         Profile
                         </Link>
                     </li>
                     <li>
-                        <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase'>
+                        <button className='bg-lime-300 py-1 px-4 rounded-full text-gray-700 uppercase' onClick={closeMenu}>
                             Connect Wallet to have access
                         </button>
                     </li>
